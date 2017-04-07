@@ -24,7 +24,7 @@ right motor pin7 pin8
             L    L    Stop
 
 */
-int SS1 = 12, SS2 = 13, SS3 = 2, SS4 = 3, SS5 = 4, IN1RolationLeft = 5, IN2RolationLeft = 6, IN1RolationRight = 7, IN2RolationRight = 8,
+int SS1 = 12, SS2 = 13, SS3 = 2, SS4 = 3, SS5 = 4, IN1RolationLeft = 5, IN2RolationLeft = 6, IN1RolationRight = 7, IN2RolationRight = 8, 
 EnLeftMotor = 9, EnRightMotor = 10;
 
 void setup()
@@ -51,7 +51,8 @@ void setup()
 }
 void loop()
 {
-  int Sensor1 = digitalRead(SS1), Sensor2 = digitalRead(SS2), Sensor3 = digitalRead(SS3), Sensor4 = digitalRead(SS4), Sensor5 = digitalRead(SS5), pwm = 150;
+  int Sensor1 = digitalRead(SS1), Sensor2 = digitalRead(SS2), Sensor3 = digitalRead(SS3), Sensor4 = digitalRead(SS4), 
+            Sensor5 = digitalRead(SS5), pwm = 150;
   
   Serial.print(Sensor1);
   Serial.print(Sensor2);
