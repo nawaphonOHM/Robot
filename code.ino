@@ -24,7 +24,8 @@ right motor pin7 pin8
             L    L    Stop
 
 */
-int SS1 = 12, SS2 = 13, SS3 = 2, SS4 = 3, SS5 = 4, IN1RolationLeft = 5, IN2RolationLeft = 6, IN1RolationRight = 7, IN2RolationRight = 8, EnLeftMotor = 9, EnRightMotor = 10;
+int SS1 = 12, SS2 = 13, SS3 = 2, SS4 = 3, SS5 = 4, IN1RolationLeft = 5, IN2RolationLeft = 6, IN1RolationRight = 7, IN2RolationRight = 8,
+EnLeftMotor = 9, EnRightMotor = 10;
 
 void setup()
 {
