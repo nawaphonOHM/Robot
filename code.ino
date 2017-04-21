@@ -13,16 +13,13 @@ connection
             pin10 EnB right motor
             
 left motor pin5 pin6
-
             H    L    Forward
             L    H    Backword
             L    L    Stop
 right motor pin7 pin8
-
             H    L    Forward
             L    H    Backward
             L    L    Stop
-
 */
 int SS1 = 12, SS2 = 13, SS3 = 2, SS4 = 3, SS5 = 4, IN1RolationLeft = 5, IN2RolationLeft = 6, IN1RolationRight = 7, IN2RolationRight = 8, 
 EnLeftMotor = 9, EnRightMotor = 10;
@@ -52,7 +49,7 @@ void setup()
 void loop()
 {
   int Sensor1 = digitalRead(SS1), Sensor2 = digitalRead(SS2), Sensor3 = digitalRead(SS3), Sensor4 = digitalRead(SS4), 
-            Sensor5 = digitalRead(SS5), pwm = 150;
+            Sensor5 = digitalRead(SS5), pwm = 180;
   
   Serial.print(Sensor1);
   Serial.print(Sensor2);
@@ -60,7 +57,12 @@ void loop()
   Serial.print(Sensor4);
   Serial.println(Sensor5);
   
-  if(Sensor3 == LOW)
+  
+  if(Sensor1 == LOW && Sensor2 == LOW && Sensor3 == LOW && Sensor4 == LOW && Sensor5 == LOW)
+  {
+    Stop(); 
+  }
+  else if(Sensor3 == LOW)
   {
     Forward(pwm);
   }
@@ -143,4 +145,11 @@ void RotateLeft(int speed)
    digitalWrite(IN1RolationLeft, LOW);
    digitalWrite(IN2RolationLeft, HIGH);
    analogWrite(EnLeftMotor, speed);
+}
+void SpicialCase(int speed)
+{
+   RotateRight(speed);
+   delay(2000);
+   Forward(speed);
+   delay(1000);
 }
